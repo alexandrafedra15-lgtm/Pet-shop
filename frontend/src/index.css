@@ -1,0 +1,334 @@
+:root {
+  /* Color Palette */
+  --color-primary: #1F4E37;        /* Verde Bosque */
+  --color-primary-light: #2D6A4F;
+  --color-secondary: #EAF3EE;      /* Verde Salvia Claro */
+  --color-accent: #E8A87C;         /* Durazno/Arena */
+  --color-accent-hover: #D8986C;
+  --color-bg-base: #FDFBF7;        /* Blanco Cálido */
+  --color-text-dark: #333333;      /* Gris Grafito */
+  --color-text-light: #666666;
+  --color-white: #FFFFFF;
+  --color-border: #E2E8F0;
+  --color-danger: #EF4444;
+  --color-success: #10B981;
+
+  /* Typography */
+  --font-family-title: 'Poppins', sans-serif;
+  --font-family-body: 'Inter', sans-serif;
+
+  /* Spacing */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 24px;
+  --shadow-sm: 0 2px 8px rgba(31, 78, 55, 0.06);
+  --shadow-md: 0 8px 24px rgba(31, 78, 55, 0.08);
+}
+
+/* Reset and Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family-body);
+  background-color: var(--color-bg-base);
+  color: var(--color-text-dark);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-title);
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-accent);
+}
+
+/* Layout Utilities */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.grid-responsive {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+@media (min-width: 768px) {
+  .grid-responsive {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-responsive {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Paw Icon Accent Pattern */
+.paw-accent {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Components Styling */
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-family-title);
+  font-weight: 500;
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-light);
+  transform: translateY(-1px);
+}
+
+.btn-accent {
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+}
+
+.btn-accent:hover {
+  background-color: var(--color-accent-hover);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-secondary);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* Product Cards */
+.product-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(31, 78, 55, 0.05);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.product-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  background-color: var(--color-secondary);
+}
+
+.product-info {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.product-category {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.product-title {
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.product-description {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+.product-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.product-price {
+  font-family: var(--font-family-title);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+/* Forms */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  font-family: var(--font-family-body);
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease;
+  background-color: var(--color-white);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+/* Navigation bar */
+.navbar {
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 16px 0;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-logo {
+  font-family: var(--font-family-title);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.navbar-item {
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--color-text-dark);
+}
+
+.navbar-item:hover, .navbar-item.active {
+  color: var(--color-primary);
+}
+
+/* Tables / Lists */
+.table-container {
+  overflow-x: auto;
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 32px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 16px 24px;
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+}
+
+th {
+  background-color: var(--color-secondary);
+  font-family: var(--font-family-title);
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* Badges */
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.badge-pendiente {
+  background-color: #FEF3C7;
+  color: #D97706;
+}
+
+.badge-pagado {
+  background-color: #D1FAE5;
+  color: #059669;
+}
+
+.badge-enviado {
+  background-color: #DBEAFE;
+  color: #2563EB;
+}
+
+.badge-cancelado {
+  background-color: #FEE2E2;
+  color: #DC2626;
+}
