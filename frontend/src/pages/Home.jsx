@@ -106,7 +106,7 @@ const Home = () => {
           {featured.map(prod => (
             <div className="product-card" key={prod.id}>
               <img 
-                src={prod.imagen ? `http://127.0.0.1:8000${prod.imagen}` : 'https://via.placeholder.com/300x200?text=Petshop'} 
+                src={prod.imagen ? prod.imagen : 'https://via.placeholder.com/300x200?text=Petshop'} 
                 alt={prod.nombre} 
                 className="product-image" 
               />

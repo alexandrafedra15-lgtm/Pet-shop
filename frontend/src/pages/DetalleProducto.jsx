@@ -89,7 +89,7 @@ const DetalleProducto = () => {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '40px' }} className="grid-responsive">
             <div>
               <img 
-                src={producto.imagen ? `http://127.0.0.1:8000${producto.imagen}` : 'https://via.placeholder.com/600x400?text=Petshop'} 
+                src={producto.imagen ? producto.imagen : 'https://via.placeholder.com/600x400?text=Petshop'} 
                 alt={producto.nombre} 
                 style={{
                   width: '100%',

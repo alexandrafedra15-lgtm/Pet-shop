@@ -255,7 +255,7 @@ const Dashboard = () => {
                 {recomendados.map(prod => (
                   <div className="product-card" key={prod.id} style={{ boxShadow: 'none', border: '1px solid var(--color-border)' }}>
                     <img 
-                      src={prod.imagen ? `http://127.0.0.1:8000${prod.imagen}` : 'https://via.placeholder.com/200x130'} 
+                      src={prod.imagen ? prod.imagen : 'https://via.placeholder.com/200x130'} 
                       alt={prod.nombre} 
                       style={{ height: '130px', width: '100%', objectFit: 'cover' }}
                     />
